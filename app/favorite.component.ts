@@ -1,32 +1,26 @@
-import {Component, Input, Output, EventEmitter} from 'angular2/core';
+import {Component, Input} from 'angular2/core';
 //import {CoursesComponent} from './courses.component'
 
 @Component({
     selector: 'favorite',
-    templateUrl: 'app/favorite.template.html',
-    styles: [` 
-        span.glyphicon{
-            margin:50px;
-        }
-    
-    `]
-        
-    //,
-    //inputs: ['isActive'],
-    //outputs: ['change']
+    template: `
+        <span class="glyphicon"
+            [class.glyphicon-star]="isActive"
+            [class.glyphicon-star-empty]="!isActive"
+            (click)="onClick();"> 
+        </span>
+    `//,
+    //inputs: ['isActive']
 })
 
 export class FavoriteComponent { 
     //isActive = false;
     @Input() isActive = false;
 
-    @Output() change = new EventEmitter();
-
     onClick(){
         // if you click it equals the opposite
         this.isActive = !this.isActive;
-        this.change.emit({ newValue: this.isActive });
-        //console.log(this.isActive);
+        console.log(this.isActive);
         
     }
     
