@@ -28,10 +28,13 @@ System.register(['angular2/core', './favorite.component'], function(exports_1, c
                         isActive: true
                     };
                 }
+                AppComponent.prototype.onFavoriteChange = function ($event) {
+                    console.log($event);
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <favorite [isActive]=\"post.isActive\"> </favorite>\n        \n    ",
+                        template: "\n        <favorite \n            [isActive]=\"post.isActive\" \n            (change)=\"onFavoriteChange($event)\"> \n        </favorite>\n        \n    ",
                         directives: [favorite_component_1.FavoriteComponent]
                     }), 
                     __metadata('design:paramtypes', [])

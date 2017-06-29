@@ -23,20 +23,27 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 function FavoriteComponent() {
                     //isActive = false;
                     this.isActive = false;
+                    this.change = new core_1.EventEmitter();
                 }
                 FavoriteComponent.prototype.onClick = function () {
                     // if you click it equals the opposite
                     this.isActive = !this.isActive;
-                    console.log(this.isActive);
+                    this.change.emit({ newValue: this.isActive });
+                    //console.log(this.isActive);
                 };
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Object)
                 ], FavoriteComponent.prototype, "isActive", void 0);
+                __decorate([
+                    core_1.Output(), 
+                    __metadata('design:type', Object)
+                ], FavoriteComponent.prototype, "change", void 0);
                 FavoriteComponent = __decorate([
                     core_1.Component({
                         selector: 'favorite',
-                        template: "\n        <span class=\"glyphicon\"\n            [class.glyphicon-star]=\"isActive\"\n            [class.glyphicon-star-empty]=\"!isActive\"\n            (click)=\"onClick();\"> \n        </span>\n    " //,
+                        templateUrl: 'app/favorite.template.html',
+                        styles: [" \n        span.glyphicon{\n            margin:50px;\n        }\n    \n    "]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], FavoriteComponent);
