@@ -3,22 +3,25 @@ import {Component} from 'angular2/core';
 
 @Component({
     selector: 'my-app',
-    //template: '<h1>Prowl Angular 2 App</h1><courses></courses>',
     template: `
-        <div (click)="onDivClick()">
-            <button (click)="onClick($event)">Submit</button>
-        </div>
-        `
-    //directives: [CoursesComponent]
+        <span class="glyphicon"
+            [class.glyphicon-star]="isActive"
+            [class.glyphicon-star-empty]="!isActive"
+            (click)="onClick();"> 
+        </span>
+        
+    `
 })
 
 export class AppComponent { 
 
-    onDivClick(){
-        console.log("handled by Div!");
+    
+    isActive = true;
+    onClick(){
+        // if you click it equals the opposite
+        this.isActive = !this.isActive;
     }
-    onClick($event){
-        $event.stopPropagation();
-        console.log("clicked!", $event);
-    }
+    
+   
+    
 }

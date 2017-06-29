@@ -21,19 +21,16 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             //import {CoursesComponent} from './courses.component'
             AppComponent = (function () {
                 function AppComponent() {
+                    this.isActive = true;
                 }
-                AppComponent.prototype.onDivClick = function () {
-                    console.log("handled by Div!");
-                };
-                AppComponent.prototype.onClick = function ($event) {
-                    $event.stopPropagation();
-                    console.log("clicked!", $event);
+                AppComponent.prototype.onClick = function () {
+                    // if you click it equals the opposite
+                    this.isActive = !this.isActive;
                 };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        //template: '<h1>Prowl Angular 2 App</h1><courses></courses>',
-                        template: "\n        <div (click)=\"onDivClick()\">\n            <button (click)=\"onClick($event)\">Submit</button>\n        </div>\n        "
+                        template: "\n        <span class=\"glyphicon\"\n            [class.glyphicon-star]=\"isActive\"\n            [class.glyphicon-star-empty]=\"!isActive\"\n            (click)=\"onClick();\"> \n        </span>\n        \n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
