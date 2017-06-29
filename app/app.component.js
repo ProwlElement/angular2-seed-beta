@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './favorite.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,27 +10,29 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, favorite_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (favorite_component_1_1) {
+                favorite_component_1 = favorite_component_1_1;
             }],
         execute: function() {
-            //import {CoursesComponent} from './courses.component'
             AppComponent = (function () {
                 function AppComponent() {
-                    this.isActive = true;
+                    this.post = {
+                        title: "Post",
+                        isActive: true
+                    };
                 }
-                AppComponent.prototype.onClick = function () {
-                    // if you click it equals the opposite
-                    this.isActive = !this.isActive;
-                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <span class=\"glyphicon\"\n            [class.glyphicon-star]=\"isActive\"\n            [class.glyphicon-star-empty]=\"!isActive\"\n            (click)=\"onClick();\"> \n        </span>\n        \n    "
+                        template: "\n        <favorite [isActive]=\"post.isActive\"> </favorite>\n        \n    ",
+                        directives: [favorite_component_1.FavoriteComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

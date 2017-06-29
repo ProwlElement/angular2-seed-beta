@@ -1,27 +1,20 @@
-import {Component} from 'angular2/core';
-//import {CoursesComponent} from './courses.component'
+import {Component, Input} from 'angular2/core';
+import {FavoriteComponent} from './favorite.component'
 
 @Component({
     selector: 'my-app',
     template: `
-        <span class="glyphicon"
-            [class.glyphicon-star]="isActive"
-            [class.glyphicon-star-empty]="!isActive"
-            (click)="onClick();"> 
-        </span>
+        <favorite [isActive]="post.isActive"> </favorite>
         
-    `
+    `,
+    directives: [FavoriteComponent]
 })
 
-export class AppComponent { 
+export class AppComponent {
 
-    
-    isActive = true;
-    onClick(){
-        // if you click it equals the opposite
-        this.isActive = !this.isActive;
+    post = { 
+        title: "Post",
+        isActive: true
     }
-    
-   
-    
+
 }
