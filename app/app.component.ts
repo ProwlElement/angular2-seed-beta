@@ -7,12 +7,6 @@ import {FavoriteComponent} from './favorite.component'
         <favorite class="fav-container" [isActive]="post.isActive"> </favorite>
         
     `,
-    styles: [` 
-        .fav-container{
-            margin:50px;
-            display:inline;
-        }
-    `],
     directives: [FavoriteComponent]
 })
 

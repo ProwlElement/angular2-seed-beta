@@ -44,7 +44,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     core_1.Component({
                         selector: 'favorite',
                         templateUrl: 'app/favorite.template.html',
-                        styles: [" \n        .glyphicon{\n            cursor: pointer;\n        }\n        .grey-heart{\n            color: #ccc;  \n        }\n        .pink-heart{\n            color:deeppink;\n        }\n    "]
+                        styles: [" \n        .glyphicon{\n            margin-top:50px;\n            cursor: pointer;\n        }\n        .grey-heart{\n            color: #ccc;  \n        }\n        .pink-heart{\n            color:deeppink;\n        }\n    "]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], FavoriteComponent);

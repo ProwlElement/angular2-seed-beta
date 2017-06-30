@@ -6,6 +6,7 @@ import {Component, Input, Output, EventEmitter} from 'angular2/core';
     templateUrl: 'app/favorite.template.html',
     styles: [` 
         .glyphicon{
+            margin-top:50px;
             cursor: pointer;
         }
         .grey-heart{

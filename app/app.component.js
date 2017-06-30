@@ -32,7 +32,6 @@ System.register(['angular2/core', './favorite.component'], function(exports_1, c
                     core_1.Component({
                         selector: 'my-app',
                         template: "\n        <favorite class=\"fav-container\" [isActive]=\"post.isActive\"> </favorite>\n        \n    ",
-                        styles: [" \n        .fav-container{\n            margin:50px;\n            display:inline;\n        }\n    "],
                         directives: [favorite_component_1.FavoriteComponent]
                     }), 
                     __metadata('design:paramtypes', [])
