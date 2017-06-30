@@ -21,16 +21,21 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             //import {CoursesComponent} from './courses.component'
             FavoriteComponent = (function () {
                 function FavoriteComponent() {
+                    this.likes = 10;
+                    this.isActive = true;
+                    this.change = new core_1.EventEmitter();
                 }
                 FavoriteComponent.prototype.onClick = function () {
                     // if you click it equals the opposite
                     this.isActive = !this.isActive;
-                    console.log(this.isActive);
+                    this.likes += !this.isActive ? 1 : -1;
+                    //console.log(this.isActive);
                 };
                 FavoriteComponent = __decorate([
                     core_1.Component({
                         selector: 'favorite',
-                        template: "\n        <span class=\"glyphicon\"\n            [class.glyphicon-star]=\"isActive\"\n            [class.glyphicon-star-empty]=\"!isActive\"\n            (click)=\"onClick();\"> \n        </span>\n    " //,
+                        templateUrl: 'app/favorite.template.html',
+                        styles: [" \n        span.glyphicon{\n            margin:50px;\n            cursor: pointer;\n        }\n        .grey-heart{\n            color: #ccc;\n            \n        }\n\n        .pink-heart{\n            color:deeppink;\n        }\n\n    \n    "]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], FavoriteComponent);

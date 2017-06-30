@@ -31,17 +31,10 @@ import {Component, Input} from 'angular2/core';
     
     `]
     
->>>>>>> Stashed changes
 })
 
 export class FavoriteComponent { 
 
-<<<<<<< Updated upstream
-    onClick(){
-        // if you click it equals the opposite
-        this.isActive = !this.isActive;
-        console.log(this.isActive);
-=======
     likes = 10;
     @Input() isActive = true;
     @Output() change = new EventEmitter();
