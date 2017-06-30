@@ -26,16 +26,25 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.change = new core_1.EventEmitter();
                 }
                 FavoriteComponent.prototype.onClick = function () {
-                    // if you click it equals the opposite
+                    // like += true plus 1 else minus 1
+                    this.likes += this.isActive ? 1 : -1;
+                    // switch true / false values with click
                     this.isActive = !this.isActive;
-                    this.likes += !this.isActive ? 1 : -1;
                     //console.log(this.isActive);
                 };
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], FavoriteComponent.prototype, "isActive", void 0);
+                __decorate([
+                    core_1.Output(), 
+                    __metadata('design:type', Object)
+                ], FavoriteComponent.prototype, "change", void 0);
                 FavoriteComponent = __decorate([
                     core_1.Component({
                         selector: 'favorite',
                         templateUrl: 'app/favorite.template.html',
-                        styles: [" \n        span.glyphicon{\n            margin:50px;\n            cursor: pointer;\n        }\n        .grey-heart{\n            color: #ccc;\n            \n        }\n\n        .pink-heart{\n            color:deeppink;\n        }\n\n    \n    "]
+                        styles: [" \n        .glyphicon{\n            cursor: pointer;\n        }\n        .grey-heart{\n            color: #ccc;  \n        }\n        .pink-heart{\n            color:deeppink;\n        }\n    "]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], FavoriteComponent);

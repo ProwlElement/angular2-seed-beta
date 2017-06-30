@@ -1,15 +1,13 @@
-<container>
-    <row>
+
        <span class="glyphicon glyphicon-heart"
             [class.grey-heart]="isActive"
             [class.pink-heart]="!isActive"
             (click)="onClick();"> 
+            
         </span>
-         <h3>
-            {{likes}}
-        </h3>
-    </row>
-</container>
+        <span><h3>{{likes}}</h3></span>
+       
+
 
 
 

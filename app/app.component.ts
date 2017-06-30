@@ -4,9 +4,15 @@ import {FavoriteComponent} from './favorite.component'
 @Component({
     selector: 'my-app',
     template: `
-        <favorite [isActive]="post.isActive"> </favorite>
+        <favorite class="fav-container" [isActive]="post.isActive"> </favorite>
         
     `,
+    styles: [` 
+        .fav-container{
+            margin:50px;
+            display:inline;
+        }
+    `],
     directives: [FavoriteComponent]
 })
 
