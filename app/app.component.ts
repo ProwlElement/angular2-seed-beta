@@ -1,5 +1,6 @@
 import {Component} from 'angular2/core';
 import {VoterComponent} from './voter.component';
+import {TweetComponent} from './tweet.component'
 
 
 @Component({
@@ -10,8 +11,9 @@ import {VoterComponent} from './voter.component';
             [myVote]="post.myVote"
             (vote)="onVote($event)">
         </voter>
+        <tweet> </tweet>
     `,
-    directives: [VoterComponent]
+    directives: [VoterComponent, TweetComponent]
 })
 
 export class AppComponent {
